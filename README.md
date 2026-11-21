@@ -118,6 +118,19 @@ Two halves: a deterministic Python **extractor** (document → clean text + meta
 
 ---
 
+
+## Two skill tracks
+
+This repository keeps the upstream general-purpose converter intact and adds a separate astrology-specialized skill:
+
+| Skill | Location | Purpose |
+|---|---|---|
+| **Book-to-Skill (original)** | [`/SKILL.md`](SKILL.md) | General conversion of books and documents into agent skills. |
+| **Astro Book-to-Skill** | [`/astro-book-to-skill/SKILL.md`](astro-book-to-skill/SKILL.md) | Astrology-specific extraction: doctrine, technical procedures, chart rules, calculation specifications, provenance, conflicts, and validation. |
+
+The astrology skill is an additional specialization, not a replacement or modification of the original. Use the original for non-astrological material; use Astro Book-to-Skill for astrology books and source corpora. Both share the repository's document extraction tools.
+
+
 ## 🚀 Usage
 
 `/book-to-skill <path|folder|glob> [skill-name]` — plus analyze-only, generate-from-analysis, and update/fold-in modes. After a conversion, the converter can publish the skill to GitHub (private by default) so any host installs it with `npx skills add`.
