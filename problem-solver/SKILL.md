@@ -194,3 +194,16 @@ Stop or report a blocker when:
 - the proposed action is unsafe, unlawful, unauthorized or outside the available tools.
 
 Never conceal a blocker by inventing a textbook, expert, course, citation, test result or completed action.
+
+
+## Illustrative output shape
+
+For a hypothetical warehouse picking-delay problem, do not jump directly to a warehouse-management tool. First define a thesis such as: "Determine whether slotting changes and replenishment policy adjustments reduce median order-picking time by at least 12% over a four-week pilot without increasing picking errors above the agreed tolerance." Then map the subquestions to warehouse operations, industrial engineering, inventory control and measurement/statistics. Search for proven warehouse-operations practitioners first; if a suitable practitioner cannot be evidenced or the work requires deeper theory, trace relevant university courses and textbooks. Build separate capabilities for process mapping, slotting analysis, replenishment policy and pilot evaluation, then test the proposed changes against baseline data. This is an illustration of the method, not a default domain or a claim about a real result.
+
+## Runtime and environment discovery
+
+Before executing repository commands or installing a skill, discover the active agent host, available tools, Python/runtime version, repository permissions, source locations, and installation target. Do not assume that a CLI, package, API key, local path, or MCP server exists. Verify the selected tool's current instructions and version. If the required capability is unavailable, report the exact blocker and provide a host-neutral alternative rather than inventing a successful execution.
+
+## Explicit escalation rules
+
+Stop and ask one focused question when a missing user-controlled fact changes the thesis, risk, jurisdiction, acceptance criterion, or authorized source scope. Stop the affected work package when no inspectable source supports a material procedure, when source access is materially incomplete, or when conflicting authorities cannot be reconciled within the thesis scope. Stop execution before any external, irreversible, costly, privacy-impacting, or consequential action unless the user has authorized that action. Continue unaffected work packages where safe, and report the blocked dependency. Never convert an unresolved blocker into an assumed fact.
