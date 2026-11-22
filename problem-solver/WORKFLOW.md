@@ -1,144 +1,152 @@
-# Operational Workflow
+# Operational Workflow — Observe, Characterize, Research, Build, Solve
 
-This document is the execution runbook for one problem instance.
+## 0. Problem evidence intake
 
-## 0. Create a problem workspace
+Create `00-problem-observation.md` using the supplied template. Capture the concrete setting, original terminology, examples, artifacts, failure modes, boundary cases and consequences. Mark every statement as observed, user-reported, source-reported, inferred or unknown.
 
-Assign a stable problem ID. Create a workspace separate from the agent repository. Record user-provided source locations and the exact scope authorized for inspection. Do not assume access to adjacent folders, accounts or private systems.
+Do not convert the input into a thesis yet.
 
-## 1. Intake and thesis
+## 1. Domain reconnaissance
 
-Produce `00-problem-brief.md` and `01-thesis.json`.
+Read `DOMAIN_CHARACTERIZATION.md`. Inventory the actual objects, terms, source types, knowledge forms, rules and evidence conditions. Inspect representative primary material rather than relying on a description of the field. For historical corpora, verify available editions and transmission evidence; for operational systems, inspect logs, workflows and real outputs; for scientific datasets, inspect schema, labels and collection protocol.
 
-Required thesis test:
-- Is the object or system identified?
-- Is the current problem observable?
-- Is the mechanism, decision or intervention stated?
-- Is the outcome measurable?
-- Is the scope bounded?
-- Is there a baseline or comparator?
-- Is there a way to disconfirm the claim?
-- Are constraints and failure costs stated?
+Create `00-domain-characterization.md`. Record the defects actually observed and their consequences. Use one row per defect in the form:
 
-If any critical item is missing, ask one blocking question or explicitly record a bounded assumption. Do not start expert search from an unbounded topic label.
+`observed defect → evidence → why it matters → specialist method → required deliverable`.
 
-## 2. Decompose expertise
+Do not fill this dossier with generic data-quality terms without examples or evidence.
 
-Create `02-expertise-map.md` with one row per work package:
+## 2. Select a research design and thesis family
 
-| WP | Thesis question | Required discipline | Practitioner role | Academic discipline | Method needed | Deliverable | Dependency |
-|---|---|---|---|---|---|---|---|
+Decide whether the actual problem is textual, semantic, doctrinal, operational, computational, empirical, methodological or engineering. A mixed problem may require multiple linked theses. Determine the maximum claim level that the available sources can support. Then draft the research questions, hypotheses where meaningful, scope, method, evidence requirements, success criteria and disconfirmation/revision conditions.
 
-Split work packages when the underlying methods or professional responsibilities differ. Identify integration points where one expert's output becomes another's input.
+If empirical outcomes are unavailable, a textual, semantic, doctrinal, reproducibility or validation-design thesis may be more rigorous than inventing a predictive-accuracy study.
 
-## 3. Search and verify authorities
+## 3. Map issue to method to expert
 
-For each work package:
-1. Search for people who perform the exact professional function.
-2. Search professional bodies, award/project records, portfolios, case studies, standards contributions and technical publications.
-3. Verify candidate claims using primary sources and independent corroboration.
-4. Record why the candidate is relevant to this thesis, not merely to the general field.
-5. If practitioner search produces no credible candidate, document the search boundary and switch to academic fallback.
-6. Search Ivy League official department and course pages.
-7. Verify the course is genuinely relevant from its description and syllabus.
-8. Verify instructor identity from the official faculty/course page.
-9. Verify textbook title, edition, author/editor and publisher from syllabus, publisher or library catalog.
-10. If the Ivy route yields no suitable source, expand to other research universities or professional institutions and state why.
+For every diagnosed issue:
+1. name the exact method that could investigate or solve it;
+2. define what the specialist would actually do;
+3. identify the precise profession/discipline;
+4. define the evidence or output expected from that expert;
+5. only then search for named people.
 
-Do not invent a ranking. Report candidate evidence and gaps. Use `templates/expert-dossier.md`.
+Build a matrix:
 
-## 4. Build the source register
+| Observation | Research question | Method | Professional role | Academic discipline | Deliverable | Dependency |
+|---|---|---|---|---|---|---|
 
-For every source record:
-- stable source ID;
-- title;
-- author/editor/institution;
-- source type;
-- edition/version/date;
-- publisher/official URL/DOI where available;
-- authority route (practitioner / academic / standard / primary research);
-- thesis questions supported;
-- chapters/pages inspected;
-- access status;
-- license/copyright constraints;
-- extraction quality and gaps;
-- contradictions and corroborating sources.
+Examples: variant passages require collation; historical term shifts require historical semantics; incomplete procedures require practitioner elicitation plus formalization; weak prediction claims require research design and independent outcome data. Verify each mapping for the actual case.
 
-Inspect sources rather than relying on search snippets. For books, record which chapters were actually read and which remain uninspected.
+## 4. Find authorities
 
-## 5. Select the skill engineering route
+### Practitioner-first
+Search for the best practitioner who performs the exact task. Validate actual projects, methods, published material, outcomes and recognition. Distinguish:
+- active practitioner;
+- teacher/trainer;
+- author/commentator;
+- historian / philologist;
+- statistician / methodologist;
+- engineer / tool author;
+- regulator / standards body.
 
-Apply this decision logic:
+More than one profile may be needed. Do not score a textual critic by business outcomes or an astrologer by unrelated academic credentials; use role-appropriate criteria.
 
-- Need a multi-skill pack with explicit capability planning, provenance, conflict tracking, routing and validation → Book Skills Creator.
-- Need broad multi-format book/document conversion or chapter-on-demand access, including configured MCP search → Book-to-Skill.
-- Need to create or refine an individual SKILL.md and its activation metadata → Meta Skill Creator.
-- Need both document conversion and modular pack architecture → Book-to-Skill may ingest/structure the corpus; feed the selected, authorized source set into Book Skills Creator for the canonical capability plan and pack.
+### Academic route when needed
+If no practitioner authority can be evidenced, or the work requires specialist scholarship, search:
+1. relevant Ivy League institution and official department;
+2. official course catalog / course page;
+3. instructor and faculty profile;
+4. official syllabus and reading list;
+5. required textbook, edition, publisher and author/editor;
+6. relevant chapters, papers and method.
 
-Do not process the same source twice without a reason. Verify repository state, release, license and host compatibility before installation.
+If Ivy sources lack a direct fit, widen to specialist centers and other research universities. Preserve the reason for widening. No institution is automatically authoritative outside its actual discipline.
 
-## 6. Build capability plan
+## 5. Source inspection and claim ledger
 
-Use `templates/skill-spec.md` to define each candidate capability. Categorize:
-- Atomic: one reusable operation.
-- Combo: a sequence of existing atomic/combo capabilities.
-- Router: selects the smallest appropriate capability and handles ambiguity.
-- Reference: concepts, definitions, evidence, taxonomies and examples not requiring a procedure.
-- Rejected: weakly supported, redundant or non-operational candidates with reason.
+Create source register, claim ledger and inspection ledger. For each source:
+- inspect title page, edition, author/editor, publication details and table of contents;
+- inspect the specific passages relevant to the problem;
+- record original language and translation where applicable;
+- record the exact location and source identifier;
+- distinguish quotation from paraphrase and later commentary;
+- check whether the source cites an earlier authority;
+- identify parallel passages and contradictions;
+- record what has not been inspected.
 
-For Book Skills Creator, preserve its canonical workflow:
-```bash
-python scripts/book_skills.py preflight
-python scripts/book_skills.py inspect <explicit-source-paths> --json
-python scripts/book_skills.py extract <explicit-source-paths> --output .book_skills_work --json
-python scripts/book_skills.py plan .book_skills_work/sources.json <pack-name> --output .book_skills_work/plan.json
-# Agent completes and reviews the draft plan; set status=ready only after architecture review.
-python scripts/book_skills.py build .book_skills_work/plan.json --output ./<pack-directory>
-python scripts/book_skills.py validate ./<pack-directory> --extraction .book_skills_work/sources.json --json
-```
-These commands are specific to Book Skills Creator. Confirm the checked-out version's CLI and schema before running. Never treat a draft plan as ready.
+For historical Chinese sources, add witness/edition identifiers and variant readings when available. Preserve source wording separately from the agent's gloss. Do not normalize away meaningful variants.
 
-## 7. Quality review
+## 6. Skill and tool search
 
-Run:
-- structural validator;
-- evidence-to-instruction trace review;
-- source conflict and extraction-gap review;
-- duplicate capability review;
-- trigger/route review;
-- positive and negative routing cases;
-- ambiguity and unsupported request cases;
-- combo dependency tests;
-- adversarial source-injection test;
-- deterministic script unit tests;
-- original-problem acceptance tests.
+Search for existing tools by method, not only by the desired outcome:
+- GitHub repositories and source code;
+- existing agent skills and skill registries;
+- academic digital-humanities projects;
+- language corpora and dictionaries;
+- research software, standards and workflow tools;
+- professional association methods and public datasets.
 
-Record failures. A structural PASS does not imply factual or semantic correctness.
+For each candidate, test fit against: inputs, output, method fidelity, provenance, uncertainty handling, reproducibility, dependencies, maintenance, license and runtime. Search should include both a direct tool and methods/resources that could be adapted.
 
-## 8. Apply to the problem
+### Select skill builder only after this review
+- Book Skills Creator for source-grounded modular packs with explicit planning, evidence mapping, conflict tracking and validation.
+- Book-to-Skill for multi-format ingestion, chapter-aware extraction and on-demand source references.
+- Meta Skill Creator / skill-architect for individual skill design, evaluation strategy and maintainability.
+- Domain-specific tools for actual collation, corpus annotation, semantic analysis, knowledge graphs, statistical work or calculation verification.
 
-For each thesis question:
-1. identify required skill(s);
-2. read the relevant skill and referenced source sections;
-3. list verified inputs;
-4. execute method or procedure;
-5. record outputs and intermediate evidence;
-6. compare alternatives;
-7. test assumptions and edge cases;
-8. independently verify critical calculations or claims;
-9. integrate work packages;
-10. assess against thesis acceptance criteria.
+Do not treat Book-to-Skill as an expert in textual criticism. It is an ingestion/conversion mechanism unless an independently verified component provides the scholarly method.
 
-## 9. Final review and handoff
+## 7. Build a capability plan
 
-The independent reviewer must attempt to falsify the main conclusion, inspect the weakest evidence link, and identify what new evidence would change the recommendation.
+For each proposed skill document:
+- one concrete operation or decision;
+- trigger conditions and non-trigger conditions;
+- input schema and prerequisites;
+- exact procedure and decision rules;
+- exception handling;
+- outputs and evidence pointers;
+- limits and uncertainty representation;
+- dependencies and skill boundaries;
+- positive, negative, ambiguous and unsupported tests.
 
-The final report must distinguish:
-- verified facts;
-- source-reported claims;
-- agent inferences;
-- hypotheses;
-- test observations;
-- unresolved uncertainties.
+Classify source-supported knowledge as:
+- operational procedure;
+- doctrinal/reference content;
+- terminology/reference;
+- source criticism procedure;
+- annotation/data model;
+- calculation/verification routine;
+- empirical research protocol;
+- unresolved candidate / rejected candidate.
 
-Do not report success if the required outcome was not measured or the acceptance criterion was not met.
+Do not convert every chapter into a skill or every paragraph into a rule.
+
+## 8. Build and validate
+
+For Book Skills Creator, preserve the repository's current inspect → extract → plan → review draft → build → validate → semantic behavior test → install procedure. Verify the installed version's CLI and schema before commands. Keep plan status draft until the architecture and evidence map are reviewed.
+
+For Book-to-Skill, inspect conversion mode, extraction quality and chapter segmentation. Verify that the generated material retains source references and does not silently flatten conflicting editions.
+
+For all tools:
+- keep private sources local unless sharing is authorized;
+- preserve license constraints;
+- verify generated files and routing metadata;
+- run positive/negative/edge tests;
+- independently review domain semantics and claims.
+
+## 9. Apply and verify
+
+Use the new/reused skills against the original task. Compare output with original source passages or raw data. For symbolic or traditional systems, separate:
+1. exact text extraction;
+2. textual interpretation;
+3. doctrinal rule selection;
+4. operational application;
+5. deterministic calculation;
+6. empirical outcome validation.
+
+Do not use correctness at one level as proof of correctness at another.
+
+## 10. Report
+
+Return the concrete problem description, domain dossier, selected thesis, method/expert map, source register, existing tool/skill search, build decision, skill pack and tests, actual solution, confidence by claim class, unresolved conflicts and next evidence needed.
