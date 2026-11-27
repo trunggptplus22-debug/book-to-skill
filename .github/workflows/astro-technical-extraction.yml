@@ -1,0 +1,16 @@
+name: Astro technical extraction tests
+on:
+  push:
+    branches: [feature/astrology-technical-extraction-notebook]
+    paths: ['astro_technical_extraction/**']
+  pull_request:
+    paths: ['astro_technical_extraction/**']
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s astro_technical_extraction/tests -v
