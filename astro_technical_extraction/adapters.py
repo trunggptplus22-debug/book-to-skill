@@ -1,6 +1,6 @@
 """Adapter to the existing Book-to-Skill extraction API."""
 from pathlib import Path
-from .document_ir import DocumentIR, blocks_from_records
+from .document_ir import DocumentIR
 
 def from_extracted_text(source_id: str, path: str | Path, extracted_text: str) -> DocumentIR:
     """Fallback adapter for flattened text; records the loss of physical layout."""
