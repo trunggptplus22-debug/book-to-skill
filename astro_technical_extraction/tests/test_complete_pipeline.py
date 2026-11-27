@@ -1,6 +1,6 @@
 import unittest
-from ..document_ir import DocumentIR,BlockType
-from ..classifier import RuleBasedClassifier,Disposition
+from ..document_ir import DocumentIR
+from ..classifier import RuleBasedClassifier
 from ..coverage import build_coverage_report
 from ..extraction import extract_records
 from ..validation import validate_records
