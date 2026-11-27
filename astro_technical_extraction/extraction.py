@@ -4,7 +4,7 @@ import re
 from dataclasses import dataclass,asdict
 from typing import Any
 from .classifier import Classification,Disposition
-from .document_ir import DocumentIR,DocumentBlock
+from .document_ir import DocumentIR
 
 @dataclass
 class TechnicalRecord:
