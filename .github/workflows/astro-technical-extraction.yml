@@ -7,10 +7,12 @@ on:
     paths: ['astro_technical_extraction/**']
 jobs:
   tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -m unittest discover -s astro_technical_extraction -t . -p 'test*.py' -v
+      - name: Install test runner
+        run: python -m pip install pytest
+      - run: python -m pytest astro_technical_extraction/tests -q
