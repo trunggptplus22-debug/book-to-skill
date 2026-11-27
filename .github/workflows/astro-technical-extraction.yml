@@ -13,4 +13,4 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -m unittest discover -s astro_technical_extraction/tests -v
+      - run: python -m unittest discover -s astro_technical_extraction -t . -p 'test*.py' -v
