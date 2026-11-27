@@ -1,8 +1,8 @@
 """Explicit dependency graph with cycle reporting."""
-from collections import defaultdict,deque
+from collections import defaultdict
 def build_dependency_graph(records):
     nodes={r.record_id:{"type":r.record_type,"block_id":r.block_id,"text":r.verbatim[:240]} for r in records}
-    edges=[]; index={r.record_id:r for r in records}
+    edges=[]
     # Heuristic links by repeated technical tokens; link only as candidate.
     tokenmap=defaultdict(set)
     for r in records:
